@@ -6954,9 +6954,9 @@ distributor RS Components</description>
 <wire x1="-7.5" y1="10.5" x2="7.5" y2="10.5" width="0.127" layer="21"/>
 <wire x1="7.5" y1="10.5" x2="7.5" y2="-10.5" width="0.127" layer="21"/>
 <wire x1="7.5" y1="-10.5" x2="-7.5" y2="-10.5" width="0.127" layer="21"/>
-<pad name="P$1" x="0" y="7" drill="0.1"/>
-<pad name="P$2" x="0" y="0" drill="0.1"/>
-<pad name="P$3" x="0" y="-7" drill="0.1"/>
+<pad name="P$1" x="0" y="7" drill="0.8"/>
+<pad name="P$2" x="0" y="0" drill="0.9"/>
+<pad name="P$3" x="0" y="-7" drill="0.9"/>
 <wire x1="-6" y1="-9" x2="-6" y2="9" width="0.127" layer="21"/>
 <wire x1="-6" y1="9" x2="6" y2="9" width="0.127" layer="21"/>
 <wire x1="6" y1="9" x2="6" y2="-9" width="0.127" layer="21"/>
@@ -7893,7 +7893,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="U$4" library="rocker sw" deviceset="ROCKER" device=""/>
 <part name="U$5" library="rocker sw" deviceset="ROCKER" device=""/>
 <part name="U$6" library="rocker sw" deviceset="ROCKER" device=""/>
-<part name="U$7" library="rocker sw" deviceset="ROCKER" device=""/>
 <part name="R37" library="SparkFun-Resistors" deviceset="10KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="R38" library="SparkFun-Resistors" deviceset="10KOHM" device="-0603-1/10W-1%" value="1k"/>
 <part name="R39" library="SparkFun-Resistors" deviceset="10KOHM" device="-0603-1/10W-1%" value="1k"/>
@@ -7922,6 +7921,9 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <part name="X6" library="con-phoenix-350" library_urn="urn:adsk.eagle:library:174" deviceset="1751280" device="" package3d_urn="urn:adsk.eagle:package:9436/1"/>
 <part name="U$12" library="SparkFun-PowerSymbols" deviceset="VCC-ISO" device=""/>
 <part name="GND-ISO10" library="SparkFun-PowerSymbols" deviceset="GND-ISO" device=""/>
+<part name="P+13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="S6" library="SparkFun-Switches" deviceset="MOMENTARY-SWITCH-SPST" device="-PTH-12MM"/>
+<part name="R40" library="SparkFun-Resistors" deviceset="10KOHM" device="-0603-1/10W-1%" value="1k"/>
 </parts>
 <sheets>
 <sheet>
@@ -8433,10 +8435,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <attribute name="NAME" x="194.31" y="-60.325" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="196.85" y="-60.325" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U$7" gate="G$1" x="25.4" y="-53.34" smashed="yes">
-<attribute name="NAME" x="21.59" y="-50.165" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="24.13" y="-50.165" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="R37" gate="G$1" x="243.84" y="-71.12" smashed="yes">
 <attribute name="NAME" x="248.92" y="-74.676" size="1.778" layer="95" font="vector" align="bottom-center"/>
 <attribute name="VALUE" x="243.84" y="-72.644" size="1.778" layer="96" font="vector" align="top-center"/>
@@ -8572,6 +8570,16 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </instance>
 <instance part="GND-ISO10" gate="G$1" x="355.6" y="-154.94" smashed="yes">
 <attribute name="VALUE" x="352.298" y="-152.4" size="1.778" layer="96" rot="R90" align="top-center"/>
+</instance>
+<instance part="P+13" gate="VCC" x="83.82" y="-58.42" smashed="yes">
+<attribute name="VALUE" x="86.36" y="-55.88" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="S6" gate="G$1" x="99.06" y="-152.4" smashed="yes">
+<attribute name="NAME" x="99.06" y="-150.876" size="1.778" layer="95" font="vector" align="bottom-center"/>
+</instance>
+<instance part="R40" gate="G$1" x="132.08" y="-185.42" smashed="yes" rot="R270">
+<attribute name="NAME" x="133.604" y="-185.42" size="1.778" layer="95" font="vector" rot="R270" align="bottom-center"/>
+<attribute name="VALUE" x="130.556" y="-185.42" size="1.778" layer="96" font="vector" rot="R270" align="top-center"/>
 </instance>
 </instances>
 <busses>
@@ -8729,6 +8737,10 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <wire x1="93.98" y1="-162.56" x2="91.44" y2="-162.56" width="0.1524" layer="91"/>
 <junction x="91.44" y="-162.56"/>
 <wire x1="86.36" y1="-167.64" x2="91.44" y2="-167.64" width="0.1524" layer="91"/>
+<pinref part="S6" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="-152.4" x2="91.44" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="-152.4" x2="91.44" y2="-157.48" width="0.1524" layer="91"/>
+<junction x="91.44" y="-157.48"/>
 </segment>
 <segment>
 <pinref part="P+14" gate="VCC" pin="VCC"/>
@@ -8807,12 +8819,14 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="U$1" gate="G$1" pin="+5V.2"/>
 <wire x1="33.02" y1="-71.12" x2="33.02" y2="-73.66" width="0.1524" layer="91"/>
 <junction x="33.02" y="-71.12"/>
-<pinref part="U$7" gate="G$1" pin="P"/>
-<wire x1="27.94" y1="-58.42" x2="27.94" y2="-60.96" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="-60.96" x2="33.02" y2="-60.96" width="0.1524" layer="91"/>
 <junction x="33.02" y="-60.96"/>
-<wire x1="12.7" y1="-60.96" x2="27.94" y2="-60.96" width="0.1524" layer="91"/>
-<junction x="27.94" y="-60.96"/>
+<wire x1="12.7" y1="-60.96" x2="33.02" y2="-60.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+13" gate="VCC" pin="VCC"/>
+<wire x1="83.82" y1="-60.96" x2="83.82" y2="-63.5" width="0.1524" layer="91"/>
+<pinref part="U$8" gate="G$1" pin="OUT+"/>
+<wire x1="83.82" y1="-63.5" x2="88.9" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8939,6 +8953,10 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <junction x="111.76" y="-193.04"/>
 <pinref part="GND19" gate="1" pin="GND"/>
 <wire x1="116.84" y1="-195.58" x2="116.84" y2="-193.04" width="0.1524" layer="91"/>
+<pinref part="R40" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="-190.5" x2="132.08" y2="-193.04" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-193.04" x2="127" y2="-193.04" width="0.1524" layer="91"/>
+<junction x="127" y="-193.04"/>
 </segment>
 <segment>
 <wire x1="68.58" y1="-187.96" x2="63.5" y2="-187.96" width="0.1524" layer="91"/>
@@ -10209,18 +10227,6 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="U$12" gate="G$1" pin="VCC-ISO"/>
 </segment>
 </net>
-<net name="VO-STEP" class="0">
-<segment>
-<pinref part="U$7" gate="G$1" pin="S"/>
-<wire x1="27.94" y1="-48.26" x2="27.94" y2="-45.72" width="0.1524" layer="91"/>
-<label x="27.94" y="-45.72" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="U$8" gate="G$1" pin="OUT+"/>
-<wire x1="88.9" y1="-63.5" x2="86.36" y2="-63.5" width="0.1524" layer="91"/>
-<label x="86.36" y="-63.5" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="2A" class="0">
 <segment>
 <pinref part="JP2" gate="A" pin="3"/>
@@ -10243,6 +10249,22 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <pinref part="R33" gate="G$1" pin="2"/>
 <pinref part="LED4" gate="G$1" pin="C"/>
 <wire x1="238.76" y1="-121.92" x2="241.3" y2="-121.92" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RST" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="D15"/>
+<wire x1="33.02" y1="-124.46" x2="30.48" y2="-124.46" width="0.1524" layer="91"/>
+<label x="27.94" y="-124.46" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R40" gate="G$1" pin="1"/>
+<pinref part="S6" gate="G$1" pin="2"/>
+<wire x1="132.08" y1="-180.34" x2="132.08" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-152.4" x2="104.14" y2="-152.4" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="-152.4" x2="134.62" y2="-152.4" width="0.1524" layer="91"/>
+<junction x="132.08" y="-152.4"/>
+<label x="132.08" y="-152.4" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
